@@ -1,14 +1,20 @@
 public class ReadingFromFile {
 
-	String[] contentOfFile = new String[100];
+	import java.io.BufferedReader;
+	import java.io.FileReader;
+	import java.io.IOException;
+	import java.util.Scanner;
+
+
+	private String[] contentOfFile = new String[100];
 
 	public void read()throws IOException{
 		
-		Scaner name = new Scanner(System.in);
-		System.out.prinln("Give name of file : " );
+		Scanner name = new Scanner(System.in);
+		System.out.println("Give name of file : " );
 		String nameOfFile = userInput.nextLine();
 		
-		if(nameOfFilen!=null){
+		if(nameOfFile!=null){
 			BufferedReader br = new BufferedReader(new FileReader(nameOfFile+".txt"));
 		
 			for(int i=0;i<100;i++){
@@ -20,4 +26,13 @@ public class ReadingFromFile {
 			br.close();
 		}
 	}
+	
+	public String[] getContentOfFile() {
+		return contentOfFile;
+	}
+
+	public void setContentOfFile(String[] contentOfFile) {
+		this.contentOfFile = contentOfFile;
+	}
+	
 }
